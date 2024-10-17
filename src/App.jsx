@@ -28,11 +28,11 @@ function App() {
 
   return (
     <div className="mt-7">
-      <h1 className="text-4 font-bold text-center">Chat-Bot</h1>
+      <h1 className="text-4 font-bold text-center animate-bounce">Chat-Bot</h1>
       <div className="h-[30vh] w-[80%]  m-auto mt-6 mb-6">
         <textarea
           value={question}
-          className="border-2 min-h-full w-[100%] p-2 border-indigo-300/100 focus:border-sky-500"
+          className="border-2 min-h-full w-[100%] p-2 border-indigo-300/100 active:border-sky-500"
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
       </div>
