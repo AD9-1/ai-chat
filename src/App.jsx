@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
-import ReactMarkdown from "react-markdown"
+// import "./App.css";
+import ReactMarkdown from "react-markdown";
 function App() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -28,22 +28,29 @@ function App() {
   };
 
   return (
-    <>
-      <h1 className="text-12xl font-bold">Chat-Bot</h1>
-      <div className="h-[200px] mt-6 mb-6">
-    
+    <div>
+      <h1 className="text-12xl font-bold text-center">Chat-Bot</h1>
+      <div className="h-[30vh] w-[80%]  m-auto mt-6 mb-6">
         <textarea
-          value={question} className="border-2 h-[150px] w-full p-2 border-indigo-300/100"
+          value={question}
+          className="border-2 min-h-full w-[100%] p-2 border-indigo-300/100 focus:border-sky-500"
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
-      </div >
-      <button onClick={generateAns} disabled={generatingAnswer ? true : false}>
-        Generate Answer
-      </button>
-      <div>
-      <ReactMarkdown className="p-4">{answer}</ReactMarkdown>
       </div>
-    </>
+      <div className="w-[80%] m-auto h-[50px]">
+        <button
+          className={`float-right border-2 border-indigo-300 hover:bg-indigo-200 hover:border-0 ${
+            generatingAnswer ? "opacity-50 cursor-not-allowed" : ""
+          }`}
+          onClick={generateAns}
+        >
+          Generate Answer
+        </button>
+      </div>
+     {answer && <div className="w-[80%] m-auto mt-8 bg-red-300">
+        <ReactMarkdown className="p-4">{answer}</ReactMarkdown>
+      </div>}
+    </div>
   );
 }
 
