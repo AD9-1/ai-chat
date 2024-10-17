@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import "./App.css";
 import ReactMarkdown from "react-markdown";
 function App() {
   const [question, setQuestion] = useState("");
@@ -28,8 +27,8 @@ function App() {
   };
 
   return (
-    <div>
-      <h1 className="text-12xl font-bold text-center">Chat-Bot</h1>
+    <div className="mt-7">
+      <h1 className="text-4 font-bold text-center">Chat-Bot</h1>
       <div className="h-[30vh] w-[80%]  m-auto mt-6 mb-6">
         <textarea
           value={question}
@@ -47,7 +46,7 @@ function App() {
           Generate Answer
         </button>
       </div>
-     {answer && <div className="w-[80%] m-auto mt-8 bg-red-300">
+     {answer && <div className="w-[80%] m-auto mt-8 bg-blue-100">
         <ReactMarkdown className="p-4">{answer}</ReactMarkdown>
       </div>}
     </div>
